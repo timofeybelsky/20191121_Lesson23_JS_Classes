@@ -1,45 +1,25 @@
 'use strict';
 
 /*
+"test"
 
-1 1 2 3 5 8 13 21 34 55 89
-
+"tset"
 */
 
+/*const str = "Word";
 
-function fib(n) {
+const result = str.split('').reverse().join('');
 
-    if(n < 1 && Number.isInteger(n) && Number.isFinite(n) ) {
-        return;
-    }
+console.log(result);*/
 
-    if(n <= 2) {
-        return 1;
-    }
+const userStr = prompt("Insert your Str:");
 
-    return fib(n - 1) + fib(n - 2);
+function checkPalindrome(str) {
+
+    str = str.replace(/[^а-яa-z]/ig,"");
+
+    return str.toLowerCase().split('').reverse().join('') === str.toLowerCase();
+
 }
 
-function fibI(n) {
-
-    if(n < 1 && Number.isInteger(n) && Number.isFinite(n) ) {
-        return;
-    }
-
-    if( n < 3 ) {
-        return 1;
-    }
-
-    let fib1 = 1;
-    let fib2 = 1;
-    let sum = fib1 + fib2;
-
-    for(let i = 3; i < n; i++) {
-
-        fib1 = fib2;
-        fib2 = sum;
-        sum = fib1 + fib2;
-    }
-
-    return sum;
-}
+alert(checkPalindrome(userStr));фв
